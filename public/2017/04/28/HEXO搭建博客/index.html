@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/28/HEXO搭建博客/index.html">
 <meta property="og:site_name" content="四月天晴">
 <meta property="og:description" content="好久以前就想搞自己的博客了，拖了好久(懒啊！)，趁者这次闲着，就来搞一下博客吧！博客采用Hexo搭建,主题拿的是NexT，它提供了三套样式，而且还支持响应式，效果相当不错！(你作为一个前端，好意思拿别人的主题？:D)">
-<meta property="og:updated_time" content="2017-04-29T17:30:27.000Z">
+<meta property="og:updated_time" content="2017-04-29T18:17:28.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO搭建个人博客">
 <meta name="twitter:description" content="好久以前就想搞自己的博客了，拖了好久(懒啊！)，趁者这次闲着，就来搞一下博客吧！博客采用Hexo搭建,主题拿的是NexT，它提供了三套样式，而且还支持响应式，效果相当不错！(你作为一个前端，好意思拿别人的主题？:D)">
@@ -139,6 +139,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f00b8aab80f81a94f0dd5bc61142fa9a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -353,7 +363,7 @@
 
       
         <p>好久以前就想搞自己的博客了，拖了好久(懒啊！)，趁者这次闲着，就来搞一下博客吧！博客采用<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>搭建,主题拿的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a>，它提供了三套样式，而且还支持响应式，效果相当不错！(你作为一个前端，好意思拿别人的主题？:D)<br><a id="more"></a></p>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
+<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
 <li>安装Nodejs，请从<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Nodejs</a>官网下载Nodejs，推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>来管理Nodejs版本！</li>
 <li>安装<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，开发必备，推荐使用！</li>
 <li>申请<a href="https://github.com/" target="_blank" rel="external">Github</a>，我们以后可以直接拿<a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>来当我们的博客地址，比如我的博客地址<a href="https://ztktct.github.io/" target="_blank" rel="external">ztktct</a>！</li>
@@ -375,6 +385,19 @@
 <p>更多参数请直接参考<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">HEXO官网</a></p>
 <h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>现在写的文章可能是整个文章都展示在外面了，但我们只想展示摘要该怎么办呢？其实只要加入一个<!-- more -->这样的占位符在文章正文里面即可:-D</p>
 <h3 id="Gitpages"><a href="#Gitpages" class="headerlink" title="Gitpages"></a>Gitpages</h3><p>先在博客创建好了，文章也写好了，但是要怎么发布呢？Github为我们提供了免费的，无限流量的GitHub Pages服务，是不是想想都激动呢O(∩_∩)O！</p>
+<h4 id="xxxx-github-io"><a href="#xxxx-github-io" class="headerlink" title="xxxx.github.io"></a>xxxx.github.io</h4><p>我们首先先以我们的用户名在Github上创建一个<code>用户名.github.io</code>的项目，然后我们修改<code>_config.yml</code>文件：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/ztktct/ztktct.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
+<p>这里的<code>ztktct</code>是我在github上的用户名，实际请改成自己的用户名！</p>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>我们已经配置好了所有的相关配置，但是现在还不能部署到GitHub Pages上，我们还需要装一个依赖<code>hexo-deployer-git</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>之后我们执行以下命令即可部署到<code>GitHub Pages</code>上了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<p>要是觉得要执行三个命令过于麻烦，我们可以修改<code>package.json</code>文件，添加以下代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "deploy": "hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy"</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>之后只要执行<code>npm run deploy</code>即可部署啦！！</p>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>一个基于HEXO的博客基本上就搭建好了，浏览器打开 <a href="http://你的用户名.github.io" target="_blank" rel="external">http://你的用户名.github.io</a> 就可以访问你的博客了，共勉！</p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">HEXO</a></li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a></li>
+<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a></li>
+<li><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO搭建个人博客</a></li>
+</ul>
 
       
     </div>
@@ -553,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建"><span class="nav-number">1.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEXO安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">HEXO安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装HEXO"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装HEXO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建HEXO项目"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建HEXO项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置HEXO主题"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置HEXO主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始写作"><span class="nav-number">1.3.</span> <span class="nav-text">开始写作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Front-Matter"><span class="nav-number">1.3.1.</span> <span class="nav-text">Front-Matter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示"><span class="nav-number">1.3.2.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitpages"><span class="nav-number">1.4.</span> <span class="nav-text">Gitpages</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客搭建"><span class="nav-number">1.</span> <span class="nav-text">博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEXO安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">HEXO安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装HEXO"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装HEXO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建HEXO项目"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建HEXO项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置HEXO主题"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置HEXO主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始写作"><span class="nav-number">1.3.</span> <span class="nav-text">开始写作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Front-Matter"><span class="nav-number">1.3.1.</span> <span class="nav-text">Front-Matter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示"><span class="nav-number">1.3.2.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitpages"><span class="nav-number">1.4.</span> <span class="nav-text">Gitpages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#xxxx-github-io"><span class="nav-number">1.4.1.</span> <span class="nav-text">xxxx.github.io</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">1.4.2.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结束语"><span class="nav-number">1.5.</span> <span class="nav-text">结束语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关资料"><span class="nav-number">1.6.</span> <span class="nav-text">相关资料</span></a></li></ol></li></ol></div>
             
 
           </div>
