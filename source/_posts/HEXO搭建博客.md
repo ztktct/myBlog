@@ -15,7 +15,7 @@ categories:
 ### 环境配置
 1. 安装Nodejs，请从[Nodejs](https://nodejs.org/en/download/)官网下载Nodejs，推荐使用[nvm](https://github.com/creationix/nvm)来管理Nodejs版本！
 2. 安装[Git](https://git-scm.com/downloads)，开发必备，推荐使用！
-3. 申请[Github](https://github.com/)，我们以后可以直接拿[GitHub Pages](https://pages.github.com/)来当我们的博客地址，比如我的博客地址[ztktct](https://ztktct.github.io/)！
+3. 申请[Github](https://github.com/)，我们以后可以直接拿[GitHub Pages](https://pages.github.com/)来当我们的博客地址，比如我的博客地址[https://ztktct.github.io/ztktct](https://ztktct.github.io/)！
 
 ### HEXO安装与配置
 #### 安装HEXO
@@ -56,7 +56,7 @@ $ hexo new [layout] <title>
 更多参数请直接参考[HEXO官网](https://hexo.io/zh-cn/docs/writing.html)
 
 #### 提示
-现在写的文章可能是整个文章都展示在外面了，但我们只想展示摘要该怎么办呢？其实只要加入一个<!-- more -->这样的占位符在文章正文里面即可:-D
+现在写的文章可能是整个文章都展示在外面了，但我们只想展示摘要该怎么办呢？其实只要加入一个`<!-- more -->`这样的占位符在文章正文里面即可:-D
 
 ### Gitpages
 先在博客创建好了，文章也写好了，但是要怎么发布呢？Github为我们提供了免费的，无限流量的GitHub Pages服务，是不是想想都激动呢O(∩_∩)O！

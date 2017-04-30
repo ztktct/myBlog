@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/28/HEXO搭建博客/index.html">
 <meta property="og:site_name" content="四月天晴">
 <meta property="og:description" content="好久以前就想搞自己的博客了，拖了好久(懒啊！)，趁者这次闲着，就来搞一下博客吧！博客采用Hexo搭建,主题拿的是NexT，它提供了三套样式，而且还支持响应式，效果相当不错！(你作为一个前端，好意思拿别人的主题？:D)">
-<meta property="og:updated_time" content="2017-04-29T18:17:28.733Z">
+<meta property="og:updated_time" content="2017-04-30T01:14:05.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO搭建个人博客">
 <meta name="twitter:description" content="好久以前就想搞自己的博客了，拖了好久(懒啊！)，趁者这次闲着，就来搞一下博客吧！博客采用Hexo搭建,主题拿的是NexT，它提供了三套样式，而且还支持响应式，效果相当不错！(你作为一个前端，好意思拿别人的主题？:D)">
@@ -366,7 +366,7 @@
 <h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
 <li>安装Nodejs，请从<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Nodejs</a>官网下载Nodejs，推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>来管理Nodejs版本！</li>
 <li>安装<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，开发必备，推荐使用！</li>
-<li>申请<a href="https://github.com/" target="_blank" rel="external">Github</a>，我们以后可以直接拿<a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>来当我们的博客地址，比如我的博客地址<a href="https://ztktct.github.io/" target="_blank" rel="external">ztktct</a>！</li>
+<li>申请<a href="https://github.com/" target="_blank" rel="external">Github</a>，我们以后可以直接拿<a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>来当我们的博客地址，比如我的博客地址<a href="https://ztktct.github.io/" target="_blank" rel="external">https://ztktct.github.io/ztktct</a>！</li>
 </ol>
 <h3 id="HEXO安装与配置"><a href="#HEXO安装与配置" class="headerlink" title="HEXO安装与配置"></a>HEXO安装与配置</h3><h4 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h4><p>在安装好Nodejs和Git之后，我们就可以来安装HEXO了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install hexo -g</div></pre></td></tr></table></figure></p>
 <h4 id="创建HEXO项目"><a href="#创建HEXO项目" class="headerlink" title="创建HEXO项目"></a>创建HEXO项目</h4><p>在安装好HEXO后，我们就可以开始搭建自己的项目了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init myB<span class="built_in">log</span></div></pre></td></tr></table></figure></p>
@@ -383,7 +383,7 @@
 <li>categories: 分类</li>
 </ul>
 <p>更多参数请直接参考<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">HEXO官网</a></p>
-<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>现在写的文章可能是整个文章都展示在外面了，但我们只想展示摘要该怎么办呢？其实只要加入一个<!-- more -->这样的占位符在文章正文里面即可:-D</p>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>现在写的文章可能是整个文章都展示在外面了，但我们只想展示摘要该怎么办呢？其实只要加入一个<code>&lt;!-- more --&gt;</code>这样的占位符在文章正文里面即可:-D</p>
 <h3 id="Gitpages"><a href="#Gitpages" class="headerlink" title="Gitpages"></a>Gitpages</h3><p>先在博客创建好了，文章也写好了，但是要怎么发布呢？Github为我们提供了免费的，无限流量的GitHub Pages服务，是不是想想都激动呢O(∩_∩)O！</p>
 <h4 id="xxxx-github-io"><a href="#xxxx-github-io" class="headerlink" title="xxxx.github.io"></a>xxxx.github.io</h4><p>我们首先先以我们的用户名在Github上创建一个<code>用户名.github.io</code>的项目，然后我们修改<code>_config.yml</code>文件：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/ztktct/ztktct.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
 <p>这里的<code>ztktct</code>是我在github上的用户名，实际请改成自己的用户名！</p>
