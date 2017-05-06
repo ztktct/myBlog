@@ -1,10 +1,7 @@
 ---
 title: HEXO搭建个人博客
 date: 2017/04/28 22:20
-tags:
-- blog
-- hexo
-- nodejs
+tags: [blog, hexo, nodejs]
 categories:
 - nodejs
 ---

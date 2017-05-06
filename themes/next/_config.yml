@@ -237,8 +237,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true # 字数统计
+  min2read: true # 阅读时长预计
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -305,7 +305,7 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+gentie_productKey: 5d866f854dad40f19240f415fa33cae7
 
 # changyan
 changyan:
@@ -395,9 +395,9 @@ vkontakte_api:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: 6hYwMpM3OTHJOgw0AROJkAUP-gzGzoHsz
+  app_key: lerCxIj1eD94yq3lbb4XVBOn
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
