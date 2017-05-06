@@ -103,6 +103,22 @@ nofollow:
 ```yml
 gentie_productKey: # 你的productKey
 ```
+4. 禁用部分页面评论
+NexT主题有提供 `comments: false` 的选项允许我们禁用某一页面的评论功能，但是当启用网易云跟帖但页面上没有评论框的时候，往往会报js错误：
+![js error](/images/hexo博客搭建/1494066776.jpg)
+我们可以更为彻底的在某一页面上禁用网易云跟帖,编辑 `themes\next\layout\_third-party\comments\index.swig` 文件:
+```html
+{% if page.comments %}
+{% include 'duoshuo.swig' %}
+{% include 'disqus.swig' %}
+{% include 'hypercomments.swig' %}
+{% include 'gentie.swig' %}
+{% include 'youyan.swig' %}
+{% include 'livere.swig' %}
+{% include 'changyan.swig' %}
+{%endif%}
+```
+我是用的NexT主题版本为5.1.0,期望官方能够修改这一BUG吧~~
 
 ## 参考资料
 {% post_link HEXO搭建博客 HEXO搭建博客 %}
