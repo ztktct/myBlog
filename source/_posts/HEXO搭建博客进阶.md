@@ -107,3 +107,4 @@ gentie_productKey: # 你的productKey
 ## 参考资料
 {% post_link HEXO搭建博客 HEXO搭建博客 %}
 [hexo高阶教程next主题优化](http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html)
+[hexo高阶教程](https://juejin.im/post/590b451a0ce46300588c43a0)
