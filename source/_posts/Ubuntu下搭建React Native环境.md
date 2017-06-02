@@ -57,22 +57,21 @@ $ sudo tar xvf jdk-8u131-linux-x64.tar.gz
    ![Android Studio](/images/React Native环境搭建/2017-06-02 00-11-16屏幕截图.png)
 5. 当SDK下载好后，我们还需要配置ANDROID_HOME环境变量：
    确保ANDROID_HOME环境变量正确地指向了你安装的Android SDK的路径。
-   具体的做法是把下面的命令加入到`~/.bashrc`文件中。如果你使用的是其他的shell，则选择对应的配置文件:
+   具体的做法是把下面的命令加入到`~/.profile`文件中。如果你使用的是其他的shell，则选择对应的配置文件:
    ```bash
     # 如果你不是通过Android Studio安装的sdk，则其路径可能不同，请自行确定清楚。
-    export ANDROID_HOME=~/Android/sdk
+    export ANDROID_HOME=${HOME}/Android/Sdk
    ```
     然后使用下列命令使其立即生效（否则重启后才生效）：
    ```bash
-    source ~/.bashrc
+    source ~/.profile
     ```
     可以使用`echo $ANDROID_HOME`检查此变量是否已正确设置。
 6. 将Android SDK的Tools目录添加到PATH变量中，以便在终端中运行一些Android工具，在`~/.profile`文件中添加:
-```bash
-export ANDROID_HOME=${HOME}/Android/Sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-```
+    ```bash
+    export PATH=${PATH}:${ANDROID_HOME}/tools
+    export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+    ```
 
 ## 安装React Native命令行工具
 ```bash
