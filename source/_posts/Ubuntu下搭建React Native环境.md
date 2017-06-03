@@ -97,10 +97,78 @@ react-native run-android
 ```bash
 $ react-native start
 ```
-如果一切顺利，你将会在机器上看到一下这张图：
+如果一切顺利，你将会在机器上看到一下这张图:D
 ![Android Studio](/images/React Native环境搭建/2017-06-03 00-13-12屏幕截图.png)
 
+## 优化开发效率
+
+### watchman
+Watchman是由Facebook提供的监视文件系统变更的工具。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。
+执行以下命令安装watchman:
+```bash
+git clone https://github.com/facebook/watchman.git
+cd watchman
+git checkout v4.7.0  # 这是本文发布时的最新稳定版本
+./autogen.sh
+./configure
+make
+sudo make install
+```
+#### 安装错误解决
+1. 安装watchman时如果提示如下信息：
+```bash
+./autogen.sh: 9: ./autogen.sh: aclocal: not found
+./autogen.sh: 10: ./autogen.sh: autoheader: not found
+./autogen.sh: 11: ./autogen.sh: automake: not found
+./autogen.sh: 12: ./autogen.sh: autoconf: not found
+```
+丢失的aclocal是automake包的一部分，因此要先安装automake：
+```bash
+$ sudo apt-get install automake
+```
+2. 安装watchman时如果提示如下信息：
+```bash
+fatal error: Python.h: 没有那个文件或目录
+```
+需要安装`python-dev`:
+```bash
+$ sudo apt-get install python-dev
+```
+
+### Gradle Daemon
+开启Gradle Daemon可以极大地提升java代码的增量编译速度。
+1. 下载[Gradle](https://gradle.org/releases),将其解压到 `/usr/local/opt` 目录下
+2. 在/etc/profile文件中添加如下配置：
+```bash
+export GRADLE_HOME=/usr/local/opt/gradle-3.5 
+export PATH=$PATH:$GRADLE_HOME/bin  
+```
+3. 执行 `source /etc/profile` 使之生效
+4. 执行gradle -v确定安装成功
+5. 配置gradle deamon
+```bash
+$ touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+```
+
+### 安装Genymotion
+比起Android Studio自带的原装模拟器，Genymotion是一个性能更好的选择。
+Genymotion需要提前安装好[virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)
+用命令行安装更为方便：
+```bash
+$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install virtualbox
+```
+之后我们从[Genymotion官网](https://www.genymotion.com/download/)下载Genymotion并安装：
+```bash
+$ chmod +x genymotion-2.9.0-linux_x64.bin
+$ sudo ./genymotion-2.6.0-linux_x64.bin -d ~
+```
+进入到`~/genymotion`目录下,执行`./genymotion`来启动
 
 ## 参考资料
  * [React Native中文网](http://reactnative.cn/docs/0.44/getting-started.html)
  * [React Native官网](https://facebook.github.io/react-native/)
+ * [Genymotion](https://www.genymotion.com/download/)
+ * [Linux下修复“运行aclocal失败：没有该文件或目录”](http://blog.csdn.net/u010849674/article/details/70238108)
+ * [React Native 一:开发环境搭建](http://blog.csdn.net/p106786860/article/details/51052299)
