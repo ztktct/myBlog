@@ -116,24 +116,24 @@ sudo make install
 ```
 #### 安装错误解决
 1. 安装watchman时如果提示如下信息：
-```bash
-./autogen.sh: 9: ./autogen.sh: aclocal: not found
-./autogen.sh: 10: ./autogen.sh: autoheader: not found
-./autogen.sh: 11: ./autogen.sh: automake: not found
-./autogen.sh: 12: ./autogen.sh: autoconf: not found
-```
-丢失的aclocal是automake包的一部分，因此要先安装automake：
-```bash
-$ sudo apt-get install automake
-```
+    ```bash
+    ./autogen.sh: 9: ./autogen.sh: aclocal: not found
+    ./autogen.sh: 10: ./autogen.sh: autoheader: not found
+    ./autogen.sh: 11: ./autogen.sh: automake: not found
+    ./autogen.sh: 12: ./autogen.sh: autoconf: not found
+    ```
+    丢失的aclocal是automake包的一部分，因此要先安装automake：
+    ```bash
+    $ sudo apt-get install automake
+    ```
 2. 安装watchman时如果提示如下信息：
-```bash
-fatal error: Python.h: 没有那个文件或目录
-```
-需要安装`python-dev`:
-```bash
-$ sudo apt-get install python-dev
-```
+    ```bash
+    fatal error: Python.h: 没有那个文件或目录
+    ```
+    需要安装`python-dev`:
+    ```bash
+    $ sudo apt-get install python-dev
+    ```
 
 ### Gradle Daemon
 开启Gradle Daemon可以极大地提升java代码的增量编译速度。
