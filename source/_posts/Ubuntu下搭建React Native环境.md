@@ -11,6 +11,8 @@ categories: [javascript, react]
 ## Node 安装
 windows下我们可以直接从[Nodejs官网](https://nodejs.org/en/)下载安装包，双击安装；
 linux下我们虽然也可以下载node源代码来安装，但推荐使用[nvm](https://github.com/creationix/nvm/blob/master/README.md)来安装node，切换版本非常方便！
+> 注: 用nvm安装完node后，可能每次启动一个终端，都会提示`commond not found`,我们需要执行以下命令：
+`nvm alias default stable`
 
 ## JAVA环境配置
 React Native目前需要Android Studio2.0或更高版本，而Android Studio又需要JAVA环境，所以先来配置JAVA环境吧(如果已经安装了JAVA, 请跳过这一步，可通过`java -version`来查看当前java版本)！

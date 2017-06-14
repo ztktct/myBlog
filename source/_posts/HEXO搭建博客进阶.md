@@ -120,6 +120,41 @@ NexT主题有提供 `comments: false` 的选项允许我们禁用某一页面的
 ```
 我是用的NexT主题版本为5.1.0,期望官方能够修改这一BUG吧~~
 
+## 压缩代码
+此时我们打开博客站点时，查看源代码，发现一大片空白，而且NexT主题默认不压缩css和js，我了提高我们博客的加载速度，我们有必要对代码进行压缩，hexo有一款插件正好帮我们做了这件事：[hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier)
+安装插件:
+```bash
+$ npm install hexo-all-minifier --save
+```
+配置`_config.yml`:
+```yml
+# 压缩html
+html_minifier:
+  enable: true
+  ignore_error: false
+# 压缩css
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+# 压缩js
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+# 压缩图片
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+```
+
 ## 参考资料
 {% post_link HEXO搭建博客 HEXO搭建博客 %}
 [hexo高阶教程next主题优化](http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html)
