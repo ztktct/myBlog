@@ -5,7 +5,7 @@ tags: [react, javascript, React Native]
 categories: [javascript, react]
 ---
 
-上一篇{% post_link 'Ubuntu下搭建React Native环境' 'Ubuntu下搭建React Native环境' %}搭建好了开发环境后，便迫不及待的想来尝试下React Native了，这篇就来记录下一款APP的开发步骤吧，算是供自己和后来人做参考吧！
+上一篇{% post_link 'Ubuntu下搭建React Native环境' 'Ubuntu下搭建React Native环境' %}搭建好了开发环境后，便迫不及待的想来尝试下React Native了，这篇就来记录下一款APP的开发步骤吧，算是供自己和后来人做参考吧！项目已上传到[github](https://github.com/ztktct/react-native-jdly)
 <!-- more -->
 
 # 开发首个React Native APP
@@ -29,7 +29,7 @@ $ react-native run-android
 其实很简单，打开Android Studo,打开项目下的`android`文件夹，Android Studo会自动帮你处理一些依赖啥的，基本能解决大部分问题:D，再次启动项目，你会发现，App已经成功安装了，你可以启动它，会得到如下一张图：
 <div align='center'>![项目安装成功](/images/React Native初尝试/2017-06-15 22-49-40屏幕截图.png)</div>
 
-## 项目编写
+## 项目组成
 项目的具体编写过程写个大概就够了，就不详细讲述了，项目地址：[react-native-jdly](https://github.com/ztktct/react-native-jdly),欢迎Fork :D!
 
 ### 项目结构
@@ -78,8 +78,8 @@ $ react-native run-android
 * `react-navigation`: 一个导航库，Facebook官方推荐的一个库，应该是不错的，这是官方文档:[react-navigation](https://reactnavigation.org/docs/intro/)
 * `mobx` + `mobx-react`: 一个状态管理库，原谅我引用了进来，其实这个小应用可以不用任何状态管理库就能运行起来，但是mobx用起来还是挺舒服的，比Redux写起来方便，不过由于它使用了ES2017的Decorator特性，所以我们需要编辑项目根目录下的`.babelrc`文件，添加`"plugins": ["transform-decorators-legacy"]`,以启用Decorator特性，同时还需要安装`babel-plugin-transform-decorators-legacy`和`babel-preset-react-native-stage-0`两个依赖。mobx的文档可参考[官方文档](https://mobx.js.org/index.html),或者{% post_link '以前的博客' 'Mobx学习笔记' %}
 
-### 项目打包
-#### 签名密钥
+## 项目打包
+### 签名密钥
 我们先需要生成一个签名密钥：
 ```bash
 $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
@@ -88,7 +88,7 @@ $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keya
 在运行上面这条语句之后，密钥库里应该已经生成了一个单独的密钥，有效期为10000天。--alias参数后面的别名是你将来为应用签名时所需要用到的，所以记得记录这个别名。
 > 注意：请记得妥善地保管好你的密钥库文件，不要上传到版本库或者其它的地方。
 
-#### 设置gradle变量
+### 设置gradle变量
 把`my-release-key.keystore`文件放到项目中的`android/app`文件夹下。
 编辑`~/.gradle/gradle.properties`（没有这个文件就创建一个），添加如下的代码（注意把其中的`****`替换为相应密码）
 ```
@@ -97,7 +97,7 @@ MYAPP_RELEASE_KEY_ALIAS=my-key-alias
 MYAPP_RELEASE_STORE_PASSWORD=*****
 MYAPP_RELEASE_KEY_PASSWORD=*****
 ```
-#### 添加签名到项目的gradle配置文件
+### 添加签名到项目的gradle配置文件
 编辑项目目录下的`android/app/build.gradle`:
 ```gradle
 ...
@@ -121,19 +121,19 @@ android {
 }
 ...
 ```
-#### 生成发行APK包
+### 生成发行APK包
 ```bash
 $ cd android && ./gradlew assembleRelease
 ```
 > 注：cd android表示进入android目录（如果你已经在android目录中了那就不用输入了）。./gradlew assembleRelease在macOS和Linux系统中表示执行当前目录下的名为gradlew的脚本文件，运行参数为assembleRelease，注意这个./不可省略；而在windows命令行下则需要去掉./。
 
 生成的APK文件位于`android/app/build/outputs/apk/app-release.apk`，它已经可以用来发布了。
-#### 测试应用的发行版本
+### 测试应用的发行版本
 ```bash
 $ cd android && ./gradlew installRelease
 ```
 
-### 更改APP图标
+## 更改APP图标
 自带的图标太丑了？我们可以更换图标为自己想要的，打开`android\app\src\main\res`目录，有以下目录：
 ![](/images/React Native初尝试/2017-06-16 00-52-54屏幕截图.png)
 前四个就是我们要更改的图标的目录了。
