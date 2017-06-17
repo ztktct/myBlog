@@ -75,6 +75,9 @@ deploy:
 nofollow:
 	enable: true
 
+# Google统计
+google_analytics: UA-101197784-1
+
 # 代码压缩
 html_minifier:
   enable: true
@@ -98,3 +101,10 @@ image_minifier:
   optimizationLevel: 2
   pngquant: false
   progressive: false
+
+# 站内搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
