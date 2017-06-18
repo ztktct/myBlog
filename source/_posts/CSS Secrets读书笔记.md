@@ -28,3 +28,14 @@ categories: [css]
 4. 使用`column`多列文本布局时，指定`column-width`而不是`column-count`，这样在较小的屏幕上会自动单列布局
 
 ### 合理使用简写
+
+## 背景与边框
+### 半透明边框
+有时候我们需要用到半透明边框，但常常与我们预期的不一样，如下面的div01,这是由于背景的工作原理导致的，默认背景是漫延到边框部分的，幸好css第三版中增加了一个新特性，`background-clip`，它是用来规定背景的绘制区域的，常用的有以下取值：
+```css
+  background-clip: border-box; // 默认,背景包含border、padding、content三个部分
+  backgorund-clip: padding-box; // 背景只包括padding、content两个部分
+  background-clip: content-box; // 背景只包含content部分
+```
+我们要想凸显半透明边框，可以采用`backgorund-clip: padding-box;`：
+{% jsfiddle wub7bazs html,css,result light 100% 300 %}
