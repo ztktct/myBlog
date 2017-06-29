@@ -39,3 +39,9 @@ categories: [css]
 ```
 我们要想凸显半透明边框，可以采用`backgorund-clip: padding-box;`：
 {% jsfiddle wub7bazs html,css,result light 100% 300 %}
+
+### 多重边框
+1. `box-shadow`,这个属性可以接收第四个参数，扩张半径，通过指定正直或负值，可以让**投影面积加大或减小**
+2. `outline`: 这个属性一直被我忽略，原来他也可以用来描边，他接受的参数跟`border`属性一样，可以设置边框的style(虚线、实线等),而且还有`outline-offset`属性用来控制距位置
+{% jsfiddle ycbnmk0h html,css,result light 100% 300 %}
+
