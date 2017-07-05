@@ -1,5 +1,5 @@
 ---
-title: MobX学习笔记(持续学习中～)
+title: MobX学习笔记
 date: 2017/05/07 22:30
 tags: [MobX, mobx-react, react, javascript]
 categories: [javascript, react]
